@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Login</title>
+    <h1 style="margin-left: 200px;margin-bottom: 100px; margin-top: 50px; color: cadetblue; ">Login To your Account<h1>
+        <script  type="text/javaScript"></h1>
+
+
+function validate()
+{
+
+	if ( document.info.email.value == "" )
+	 {
+           document.getElementById('error_user').innerHTML = "this field is required";
+           document.info.username.focus();
+		   return false;
+         }
+       if(document.info.password.value == "")
+	 {
+	   document.getElementById('error_pass').innerHTML = "this field is required";
+	   document.info.password.focus();
+	   return false;
+         }
+   return true;
+}
+</script>
+        </head>
+<body>
+<table>
+    <div>
+        <form  name=info action="signin" method="POST" onsubmit="return validate()">
+
+            <tr>
+                <td align="right"> </td>
+                <td><input style="margin-left: 200px;margin-bottom: 25px;width: 330px;height:40px" type=text name="fname" placeholder="Username"></td>
+            <tr><tr>
+            <td style="color:blue" id="error_user" ></td>
+        </tr>
+
+            <tr>
+                <td align="right"></td>
+                <td><input style="margin-left: 200px; margin-bottom: 25px;width: 330px;height:40px;" type=password name="password" placeholder="Password"></td>
+            <tr><tr>
+            <td style="color:red" id="error_pass" ></td>
+        </tr>
+
+            <tr>
+                <td><br/></td>
+                <td ><input style="margin-left: 200px; margin-bottom: 25px;width: 70px;height:25px;color:rgb(238, 243, 245) ; background-color:#008BCA" type=submit value='LOGIN'></td>
+            </tr>
+            <tr>
+                <td><br/></td>
+                <td><font style="margin-left: 200px;"face="arial" size="2" color="blue">Don't have a account.<br><a href="signup.html">Sign in instead</a></font></td>
+            </tr>
+        </form>
+
+
+
+    </div>
+</table>
+</body>
+</html>

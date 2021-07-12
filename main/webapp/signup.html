@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIGNUP</title>
+    <h1 style="margin-left: 200px;margin-bottom: 100px; margin-top: 50px; color: cadetblue; ">Create your Google Account</h1>
+    <script  type="text/javaScript">
+
+function validate()
+{
+
+	if ( document.info.fname.value == "" && document.info.lname.value == "")
+	    {
+			 document.getElementById('error_user').innerHTML = "username is empty";
+			 return false;
+         }
+
+
+    if(document.info.pass.value == "")
+	   {
+			document.getElementById('error_pass').innerHTML =  "password is empty ";
+			document.info.pass.focus();
+			return false;
+	   }
+
+
+
+	if(document.info.pass.value!=document.info.conf.value)
+	   {
+			document.getElementById('error_conf').innerHTML = "Password and Confirm password doesn't match";
+			document.info.conf.focus();
+			return false;
+	   }
+
+   {
+ var pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+   if(document.info.email.value.match(pattern))
+   {
+   }
+   else
+   {
+      document.getElementById('error_mail').innerHTML = "Email is empty or Invalid";
+      document.info.email.focus();
+      return false;
+   }
+  }
+        return true;
+}
+</script>
+</head>
+<body>
+
+
+<form name=info action="signup" method="POST" onsubmit="return validate()" >
+
+
+    <input style="margin-left: 200px;margin-bottom: 25px;width: 330px;height:40px" type=text name="fname" placeholder="Firstname">
+    <span id="error_user" style="color:red"></span>
+
+
+    <input style="margin-left: 30px;margin-bottom: 25px;width: 330px;height:40px" type=text name="lname" placeholder="Lastname">
+    <span  id="error_user" style="color:red"></span>
+
+    <br><br>
+
+    <input style="margin-left: 200px;margin-bottom: 25px;width: 330px;height:40px" type="text" name="email" placeholder="Username   @gmail.com"/>
+    <span id="error_mail" style="color:red" ></span><br><br>
+    <font face="arial" size="2" color="blue">Use letters,numbers & special characters</font>
+
+
+    <br><br>
+
+    <input style="margin-left: 200px;margin-bottom: 25px;width: 330px;height:40px" type=password name="pass" placeholder="Password" id="Input">
+    <span  id="error_pass" style="color:red"></span>
+
+
+    <input style="margin-left: 30px;margin-bottom: 25px;width: 330px;height:40px" type=password name="conf" placeholder="Confirm Password" id="Input">
+    <span style="color:red" id="error_conf"></span>
+    <br><br>
+
+
+
+
+
+
+    <input style="margin-left: 200px; margin-bottom: 25px;width: 70px;height:25px;color:white; background-color:#008BCA" type=submit value='SUBMIT'>
+
+</form>
+</body>
+</html>
